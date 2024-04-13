@@ -37,6 +37,8 @@ namespace BeardDefender_Monogame.GameLevels
             Sea seaTile2,
             Hedgehog hedgehog,
             Crabman crabman,
+            Shark shark1,
+            Shark shark2,
             List<Shark> sharkList,
             List<PowerUp> powerUpList,
             HealthCounter healthCounter)
@@ -74,11 +76,14 @@ namespace BeardDefender_Monogame.GameLevels
             //returnerar rätt frame index som används i Update.
             crabman.CurrentFrameIndex = crabman.Update(_graphics, gameTime, player, game, filePath, powerUpList, sharkList, hedgehog, healthCounter);
             // Shark movement, returnerar rätt frame index som används i Update.
-            
-            foreach (Shark shark in sharkList)
-            {
-                shark.CurrentFrameIndex = shark.Update(_graphics, gameTime, player, game, filePath, powerUpList, sharkList, hedgehog, healthCounter);
-            }
+            shark1.Update(keyboardState, gameTime, groundList);
+            shark2.Update(keyboardState, gameTime, groundList);
+
+
+            //foreach (Shark shark in sharkList)
+            //{
+            //    shark.CurrentFrameIndex = shark.Update(keyboardState, gameTime, groundList);
+            //}
 
             hedgehog.CurrentFrameIndex = hedgehog.Update(_graphics, gameTime, player, game, filePath, powerUpList, sharkList, hedgehog, healthCounter);
             //Updaterar score i sammaband med spelets timer

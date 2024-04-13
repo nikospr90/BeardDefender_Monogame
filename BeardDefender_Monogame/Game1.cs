@@ -329,6 +329,8 @@ namespace BeardDefender_Monogame
                                 seaTile2,
                                 hedgehog,
                                 crabman,
+                                shark,
+                                shark2,
                                 sharkList,
                                 powerUpList,
                                 healthCounter);
